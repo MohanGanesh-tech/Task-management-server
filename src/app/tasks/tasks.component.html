@@ -1,0 +1,60 @@
+<div class="backimage">
+        <h2 class="mainheadtext">Activity Management</h2>
+    <div class="divcenter">
+        <div class="divleft">
+            <div class="addtask">
+                <h3 class="headtext">Add Task</h3>
+                <form (submit)="addTask()">
+                    <div class="form-group">
+                        <label for="taskname">Taskname</label>
+                        <input type="text" class="form-control" id="taskname" aria-describedby="emailHelp"
+                            [(ngModel)]="taskname" name="taskname" placeholder="Taskname">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" class="form-control" id="date" [(ngModel)]="date" name="date"
+                            placeholder="Date">
+                    </div><br />
+                    <button type="submit" class="btn btn-outline-primary " style="float: right;">Add</button>
+                </form><br />
+            </div>
+        </div>
+        <div class="divright">
+            <div class="showtask">
+                <h3 class="headtext">View Task</h3>
+                <div class="tableshow">
+                    <table class="table table-hover table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Task</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Done</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor=" let task of tasks">
+                                <td>{{task.taskname}}</td>
+                                <td>{{task.date}}</td>
+                                <td>{{task.status}}</td>
+                                <td *ngIf="task.status == 'pending'"><input type="button"
+                                        class="btn btn-outline-primary btn-sm" (click)="updateTask(task._id)"
+                                        value="Done" /></td>
+                                <td *ngIf="task.status == 'done'"><input type="button"
+                                    class="btn btn-outline-secondary btn-sm"
+                                    value="Done" /></td>
+                                <td><input type="button" class="btn btn-outline-danger btn-sm"
+                                        (click)="deleteTask(task._id)" value="Delete" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <form (submit)="userLogout()">
+                    <input type="submit" value="Logout" class="btn btn-outline-warning"
+                        style="margin-top: 15px; float: right;" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

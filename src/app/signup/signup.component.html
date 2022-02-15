@@ -1,0 +1,33 @@
+<div class="backimage">
+    <div class="divcard">
+        <div class="divcenter">
+            <h3 class="headtext">SIGN UP</h3>
+            <div *ngIf="usermsg != ''">{{usermsg}}</div>
+            <form (submit)="userSignup()">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
+                        placeholder="User Name" [(ngModel)]="username" name="username" required />
+                </div><br />
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" id="phone" placeholder="Phone" [(ngModel)]="phone"
+                        name="phone" required />
+                </div><br />
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email" [(ngModel)]="email"
+                        name="email" required />
+                </div><br />
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password"
+                        [(ngModel)]="password" name="password" required />
+                </div><br />
+                <button type="submit" class="btn btn-outline-dark">Sign Up</button>
+                <br />
+                <a routerLink="/" style="color: black;">Log In</a>
+            </form>
+        </div>
+    </div>
+</div>

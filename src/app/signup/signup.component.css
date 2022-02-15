@@ -1,0 +1,26 @@
+.backimage{
+    background-image: url(../../public/b7.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 100px;
+    height: 700px;
+    box-shadow: 15px 15px;
+    border-radius: 5px;
+}
+
+.divcard{
+    position: absolute;
+    width: 350px;
+    height: 500px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 5%;
+    margin-left: 35%;
+    border-radius: 10px;
+    opacity: 80%;
+}
+
+.divcenter{
+    margin: 35px 30px 30px 30px;
+    text-align: center;
+}
